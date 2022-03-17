@@ -1,23 +1,22 @@
-import pandas as pd
-import scipy as sp
-import numpy as np
-
 import emcee
+import lymph
+import corner
+from cycler import cycler
+from matplotlib.colors import ListedColormap
+from matplotlib.colors import LinearSegmentedColormap
+from matplotlib import font_manager
+import matplotlib.gridspec as gs
+import matplotlib.pyplot as plt
 from multiprocessing import Pool
 
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as gs
-from matplotlib import font_manager
-from matplotlib.colors import LinearSegmentedColormap
-from matplotlib.colors import ListedColormap
-from cycler import cycler
-import corner
+import numpy as np
+import scipy as sp
+import pandas as pd
 
-import lymph
 
-NEW_MODEL = True
+NEW_MODEL = False
 
-filename = r"notebook\extended_system.hdf5"
+filename = "latest_extended.hdf5"
 
 if not NEW_MODEL:
     extended_systm = lymph.utils.system_from_hdf(
@@ -85,12 +84,12 @@ def llh(theta):
 
 
 ndim = len(extended_systm.spread_probs) + 1
-nwalkers = 20 * ndim
-nstep = 10000
-burnin = 5000
+nwalkers = 2 * ndim
+nstep = 10
+burnin = 5
 moves = [(emcee.moves.DEMove(), 0.8), (emcee.moves.DESnookerMove(), 0.2)]
 
-if NEW_MODEL:
+if True:
 
     initial_spread_probs = np.random.uniform(
         low=0., high=1., size=(nwalkers, ndim))
@@ -99,7 +98,7 @@ if NEW_MODEL:
         filename=filename,
         name="extended/samples"
     )
-    #backend.reset(nwalkers, ndim)
+    backend.reset(nwalkers, ndim)
 
     if __name__ == "__main__":
         with Pool() as pool:
@@ -109,7 +108,7 @@ if NEW_MODEL:
                 moves=moves, pool=pool,
                 backend=backend
             )
-            sampler.run_mcmc(initial_spread_probs, nstep, progress=True)
+            sampler.run_mcmc(initial_spread_probs, nstep)
         samples_HMM = sampler.get_chain(flat=True, discard=burnin)
         print(samples_HMM)
 else:
