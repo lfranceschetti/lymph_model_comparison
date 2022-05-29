@@ -11,7 +11,10 @@ import matplotlib.gridspec as gs
 import matplotlib.pyplot as plt
 from multiprocessing import Pool
 <<<<<<< HEAD
+<<<<<<< HEAD
 from sklearn.model_selection import KFold
+=======
+>>>>>>> 6cf3ef5023732634090039a8deaffd5c2b9d05ba
 =======
 >>>>>>> 6cf3ef5023732634090039a8deaffd5c2b9d05ba
 
@@ -20,6 +23,7 @@ import scipy as sp
 import pandas as pd
 
 np.random.seed(42)
+<<<<<<< HEAD
 <<<<<<< HEAD
 full_data = pd.read_csv("../data/ipsi_data.csv", header=[0,1])
 
@@ -94,6 +98,8 @@ for graph in all_graphs:
 
     
 =======
+=======
+>>>>>>> 6cf3ef5023732634090039a8deaffd5c2b9d05ba
 
 
 print(all_graphs)
@@ -141,5 +147,8 @@ def sample(graph):
                         new_backend.iteration, progress=True)
         samples_HMM = sampler.get_chain(flat=True, discard=burnin)
         print(samples_HMM)
+<<<<<<< HEAD
+>>>>>>> 6cf3ef5023732634090039a8deaffd5c2b9d05ba
+=======
 >>>>>>> 6cf3ef5023732634090039a8deaffd5c2b9d05ba
 
