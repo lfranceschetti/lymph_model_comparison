@@ -1,12 +1,3 @@
-original_graph = {
-    ('tumor', 'primary'): ['I', 'II', 'III', 'IV', 'V', 'VII'],
-    ('lnl', 'I'): [],
-    ('lnl', 'II'): ['I', 'III', 'V', 'VII'],
-    ('lnl', 'III'): ['IV'],
-    ('lnl', 'IV'): [],
-    ('lnl', 'V'): [],
-    ('lnl', 'VII'): [],
-}
 
 minimal_graph = {
     ('tumor', 'primary'): ['I', 'II', 'III', 'IV', 'V', 'VII'],
@@ -18,52 +9,51 @@ minimal_graph = {
     ('lnl', 'VII'): [],
 }
 
-add_12 = {
+add_ab = {
     ('tumor', 'primary'): ['I', 'II', 'III', 'IV', 'V', 'VII'],
     ('lnl', 'I'): ["II"],
-    ('lnl', 'II'): ['I', 'III', 'V', 'VII'],
-    ('lnl', 'III'): ['IV'],
-    ('lnl', 'IV'): [],
-    ('lnl', 'V'): [],
-    ('lnl', 'VII'): [],
-}
-
-rm_21 = {
-    ('tumor', 'primary'): ['I', 'II', 'III', 'IV', 'V', 'VII'],
-    ('lnl', 'I'): [],
-    ('lnl', 'II'): ['III', 'V', "VII"],
-    ('lnl', 'III'): ['IV'],
-    ('lnl', 'IV'): [],
-    ('lnl', 'V'): [],
-    ('lnl', 'VII'): [],
-}
-
-rm_27 = {
-    ('tumor', 'primary'): ['I', 'II', 'III', 'IV', 'V', 'VII'],
-    ('lnl', 'I'): [],
     ('lnl', 'II'): ['I', 'III', 'V'],
     ('lnl', 'III'): ['IV'],
     ('lnl', 'IV'): [],
-    ('lnl', 'V'): ["IV"],
+    ('lnl', 'V'): [],
     ('lnl', 'VII'): [],
 }
 
-
-add_52 = {
+add_ac = {
     ('tumor', 'primary'): ['I', 'II', 'III', 'IV', 'V', 'VII'],
-    ('lnl', 'I'): [],
-    ('lnl', 'II'): ['I', 'III', 'V', 'VII'],
+    ('lnl', 'I'): ["II"],
+    ('lnl', 'II'): ['III', 'V', 'VII'],
     ('lnl', 'III'): ['IV'],
     ('lnl', 'IV'): [],
-    ('lnl', 'V'): ["II"],
+    ('lnl', 'V'): [],
     ('lnl', 'VII'): [],
 }
 
-add_35 = {
+add_ad = {
+    ('tumor', 'primary'): ['I', 'II', 'III', 'IV', 'V', 'VII'],
+    ('lnl', 'I'): ["II"],
+    ('lnl', 'II'): ['III', 'V'],
+    ('lnl', 'III'): ['IV', "V"],
+    ('lnl', 'IV'): [],
+    ('lnl', 'V'): [],
+    ('lnl', 'VII'): [],
+}
+
+add_ae = {
+    ('tumor', 'primary'): ['I', 'II', 'III', 'IV', 'V', 'VII'],
+    ('lnl', 'I'): ["II"],
+    ('lnl', 'II'): ['III', 'V'],
+    ('lnl', 'III'): ['IV'],
+    ('lnl', 'IV'): [],
+    ('lnl', 'V'): [],
+    ('lnl', 'VII'): [],
+}
+
+add_bc = {
     ('tumor', 'primary'): ['I', 'II', 'III', 'IV', 'V', 'VII'],
     ('lnl', 'I'): [],
-    ('lnl', 'II'): ['I', 'III', 'V', 'VII'],
-    ('lnl', 'III'): ['IV', "V"],
+    ('lnl', 'II'): ['III', 'V'],
+    ('lnl', 'III'): ['IV'],
     ('lnl', 'IV'): [],
     ('lnl', 'V'): [],
     ('lnl', 'VII'): [],
